@@ -1,0 +1,32 @@
+package com.websystique.springmvc.controller;
+
+import org.springframework.stereotype.Controller;  
+import org.springframework.ui.ModelMap;  
+import org.springframework.web.bind.annotation.RequestMapping;  
+import org.springframework.web.bind.annotation.RequestMethod;  
+   
+@Controller  
+@RequestMapping("/")  
+public class HelloWorldController {  
+   
+    @RequestMapping(method = RequestMethod.GET)  
+    public String sayHello(ModelMap model) {  
+        model.addAttribute("greeting", "Hello World from Spring 4 MVC"); 
+
+        
+        return "welcome";  
+    }  
+   
+    @RequestMapping(value="/s1", method = RequestMethod.GET)  
+    public String sayHelloAgain(ModelMap model) {  
+        model.addAttribute("greeting", "Hello World Again, from Spring 4 MVC");  
+        System.out.println("Step1");
+        System.out.println("Step2");
+        System.out.println("Step3");
+        System.out.println("Step4");
+        System.out.println("Step5");
+        System.out.println("Step6");
+        return "welcome";  
+    }  
+   
+} 
